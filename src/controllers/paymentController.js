@@ -24,7 +24,7 @@ const createPreference = async (req, res) => {
         failure: "http://localhost:5173/cart",
         pending: "http://localhost:5173/cart"
       },
-      //auto_return: "approved"
+      auto_return: "approved"
     };
 
     // LOG DE SEGURIDAD: Vamos a imprimir qué se está mandando realmente
