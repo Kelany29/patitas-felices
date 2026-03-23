@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+
+  --color-celeste-pastel: #B2E2F2;
+  --color-celeste-fuerte: #81D4FA;
+  --color-fondo-crema: #F8FAFC;
+  --color-texto-pet: #334155;
+  
+  
+  --radius-pet: 24px;
+}
+
+body {
+  /* Ahora sí los reconocerá */
+  @apply bg-fondo-crema text-texto-pet antialiased;
+}
