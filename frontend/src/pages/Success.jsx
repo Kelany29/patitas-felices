@@ -30,7 +30,7 @@ const Success = () => {
         const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
         // 2. Enviamos los datos al backend con el TOKEN de seguridad
-        const response = await axios.post('http://localhost:3000/api/orders', 
+        const response = await axios.post('https://patitas-felices-l87x.onrender.com/api/orders', 
           {
             total: total,
             items: cartItems,

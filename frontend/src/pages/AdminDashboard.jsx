@@ -25,7 +25,7 @@ const AdminDashboard = () => {
 
   const obtenerProductos = async () => {
     try {
-      const respuesta = await axios.get("http://localhost:3000/api/products");
+      const respuesta = await axios.get("'https://patitas-felices-l87x.onrender.com'/api/products");
       setProductos(respuesta.data);
     } catch (error) {
       console.error("Error al traer productos:", error);
@@ -82,7 +82,7 @@ const AdminDashboard = () => {
       if (editandoId) {
         // MODO EDICIÓN (PUT)
         await axios.put(
-          `http://localhost:3000/api/products/${editandoId}`,
+          `'https://patitas-felices-l87x.onrender.com'/api/products/${editandoId}`,
           productoParaEnviar,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
       } else {
         // MODO CREACIÓN (POST)
         await axios.post(
-          "http://localhost:3000/api/products",
+          "'https://patitas-felices-l87x.onrender.com'/api/products",
           productoParaEnviar,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -115,7 +115,7 @@ const AdminDashboard = () => {
     ) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:3000/api/products/${id}`, {
+        await axios.delete(`'https://patitas-felices-l87x.onrender.com'/api/products/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProductos(productos.filter((p) => p.id !== id));

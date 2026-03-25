@@ -28,7 +28,7 @@ const handleCheckout = async () => {
     // Eliminamos el axios.post a /api/orders que estaba aquí.
     
     const responseMP = await axios.post(
-      "http://localhost:3000/api/payments/create-preference",
+      "'https://patitas-felices-l87x.onrender.com'/api/payments/create-preference",
       { items: cart },
       { headers: { Authorization: `Bearer ${token}` } }
     );

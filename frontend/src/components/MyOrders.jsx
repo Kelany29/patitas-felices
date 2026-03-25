@@ -19,7 +19,7 @@ const MyOrders = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:3000/api/orders/my-orders", {
+        const response = await axios.get("'https://patitas-felices-l87x.onrender.com'/api/orders/my-orders", {
           headers: { Authorization: `Bearer ${token}` },
         });
         

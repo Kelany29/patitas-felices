@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const respuesta = await axios.get("http://localhost:3000/api/products");
+        const respuesta = await axios.get("'https://patitas-felices-l87x.onrender.com'/api/products");
         setProductos(respuesta.data);
         setCargando(false);
       } catch (error) {

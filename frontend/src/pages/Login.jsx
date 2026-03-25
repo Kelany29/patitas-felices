@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
     try {
       // 1. Petición al backend
-      const { data } = await axios.post('http://localhost:3000/api/auth/login', credentials);
+      const { data } = await axios.post('https://patitas-felices-l87x.onrender.com/api/auth/login', credentials);
       
       // 2. CAMBIO CLAVE: Usamos sessionStorage en lugar de localStorage
       // Esto hace que la sesión se borre automáticamente al cerrar la pestaña
