@@ -25,7 +25,9 @@ const AdminDashboard = () => {
 
   const obtenerProductos = async () => {
     try {
-      const respuesta = await axios.get("'https://patitas-felices-l87x.onrender.com'/api/products");
+      const respuesta = await axios.get(
+        "https://patitas-felices-backend-wkn9.onrender.com/api/products",
+      );
       setProductos(respuesta.data);
     } catch (error) {
       console.error("Error al traer productos:", error);
@@ -82,7 +84,7 @@ const AdminDashboard = () => {
       if (editandoId) {
         // MODO EDICIÓN (PUT)
         await axios.put(
-          `'https://patitas-felices-l87x.onrender.com'/api/products/${editandoId}`,
+          `https://patitas-felices-backend-wkn9.onrender.com/api/products/${editandoId}`,
           productoParaEnviar,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -92,7 +94,7 @@ const AdminDashboard = () => {
       } else {
         // MODO CREACIÓN (POST)
         await axios.post(
-          "'https://patitas-felices-l87x.onrender.com'/api/products",
+          "https://patitas-felices-backend-wkn9.onrender.com/api/products",
           productoParaEnviar,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -115,9 +117,12 @@ const AdminDashboard = () => {
     ) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`'https://patitas-felices-l87x.onrender.com'/api/products/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.delete(
+          `https://patitas-felices-backend-wkn9.onrender.com/api/products/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         setProductos(productos.filter((p) => p.id !== id));
         alert("Producto eliminado correctamente 🐾");
       } catch (error) {
